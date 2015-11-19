@@ -1,0 +1,97 @@
+; Wrye Bash Wizard Installer for Customize Legendary Enemy Spawning by The Iron Rose
+; Installation code by Patrick Watson
+; November 18, 2015
+; This script assumes that Wrye Bash and other Skyrim tools will be updated to work with Fallout 4. It doesn't do anything in Nexus Mod Manager.
+;========================================================================================================================================================================================================
+
+DeSelectAll
+
+iPluginsSelected = 0
+
+SelectOne "Please choose how often you want legendary spawns to occur.", \
+	"|3x", "Legendary Enemies appear 3 times as often relative to unmodded normal difficulty.", "", \
+	"5x", "Legendary Enemies appear 5 times as often relative to unmodded normal difficulty.", "", \
+	"10x", "Legendary Enemies appear 10 times as often relative to unmodded normal difficulty.", "", \
+	"15x", "Legendary Enemies appear 15 times as often relative to unmodded normal difficulty.", "", \
+	"20x", "Legendary Enemies appear 20 times as often relative to unmodded normal difficulty.", "", \
+	"10000x", "Legendary Enemies appear 10000 times as often relative to unmodded normal difficulty. Please note that Fallout 4 will still only spawn 1 Legendary Enemy per wave.", "", \
+	"Custom", "Change Legendary Enemy spawn rates for only particular difficulty levels.", ""
+
+	Case "3x"
+		SelectEspm "LegendaryAllDifficulties3x.esp"
+		iPluginsSelected += 1
+	Break
+
+	Case "5x"
+		SelectEspm "LegendaryAllDifficulties5x.esp"
+		iPluginsSelected += 1
+	Break
+
+	Case "10x"
+		SelectEspm "LegendaryAllDifficulties10x.esp"
+		iPluginsSelected += 1
+	Break
+
+	Case "15x"
+		SelectEspm "LegendaryAllDifficulties15x.esp"
+		iPluginsSelected += 1
+	Break
+
+	Case "20x"
+		SelectEspm "LegendaryAllDifficulties20x.esp"
+		iPluginsSelected += 1
+	Break
+
+	Case "10000x"
+		SelectEspm "LegendaryAllDifficulties10000x.esp"
+		iPluginsSelected += 1
+	Break
+    
+	Case "Custom"
+		SelectMany "Legendary Enemies will appear 3 times as often relative to unmodded normal difficulty. Please select which difficulty levels to apply this to.", \
+			"Very Easy", "Apply changes to the Very Easy difficulty level.", "", \
+			"Easy", "Apply changes to the Very Easy difficulty level.", "", \
+			"Normal", "Apply changes to the Very Easy difficulty level.", "", \
+			"Hard", "Apply changes to the Very Easy difficulty level.", "", \
+			"Very Hard", "Apply changes to the Very Easy difficulty level.", "", \
+			"Survival", "Apply changes to the Very Easy difficulty level.", ""
+
+			Case "Very Easy"
+				iPluginsSelected += 1
+				SelectEspm "LegendaryVeryEasy.esp"
+			Break
+
+			Case "Easy"
+				iPluginsSelected += 1
+				SelectEspm "LegendaryEasy.esp"
+			Break
+
+			Case "Normal"
+				iPluginsSelected += 1
+				SelectEspm "LegendaryNormal.esp"
+			Break
+
+			Case "Hard"
+				iPluginsSelected += 1
+				SelectEspm "LegendaryHard.esp"
+			Break
+
+			Case "Very Hard"
+				iPluginsSelected += 1
+				SelectEspm "LegendaryVeryHard.esp"
+			Break
+
+			Case "Survival"
+				iPluginsSelected += 1
+				SelectEspm "LegendarySurvival.esp"
+			Break
+		EndSelect
+	Break
+EndSelect
+
+If iPluginsSelected < 1
+	Cancel "No changes selected"
+EndIf
+
+Note "Customize Legendary Enemy Spawning by The Iron Rose"
+Note "Installer by Patrick Watson"

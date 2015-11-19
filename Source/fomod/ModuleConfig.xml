@@ -1,0 +1,141 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+	<moduleName>Customize Legendary Enemy Spawning</moduleName>
+	<installSteps order="Explicit">
+		<installStep name="Main">
+			<optionalFileGroups>
+				<group name="MainOptions" type="SelectExactlyOne">
+					<plugins order="Explicit">
+						<plugin name="3x">
+							<description>Legendary Enemies appear in all difficulty levels 3 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryAllDifficulties3x.esp" destination="LegendaryAllDifficulties3x.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="5x">
+							<description>Legendary Enemies appear in all difficulty levels 5 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryAllDifficulties5x.esp" destination="LegendaryAllDifficulties5x.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="10x">
+							<description>Legendary Enemies appear in all difficulty levels 10 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryAllDifficulties10x.esp" destination="LegendaryAllDifficulties10x.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="15x">
+							<description>Legendary Enemies appear in all difficulty levels 15 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryAllDifficulties15x.esp" destination="LegendaryAllDifficulties15x.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="20x">
+							<description>Legendary Enemies appear in all difficulty levels 20 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryAllDifficulties20x.esp" destination="LegendaryAllDifficulties20x.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="10000x">
+							<description>Legendary Enemies appear in all difficulty levels 10000 times as often relative to unmodded normal difficulty. Please note that Fallout 4 will still only spawn 1 Legendary Enemy per wave.</description>
+							<files>
+								<file source="LegendaryAllDifficulties10000x.esp" destination="LegendaryAllDifficulties10000x.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Custom">
+							<description>Pick which difficulty levels in which Legendary Enemies appear 3 times as often relative to unmodded normal difficulty.</description>
+							<conditionFlags>
+								<flag name="Custom">On</flag>
+							</conditionFlags>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+					</plugins>
+				</group>
+			</optionalFileGroups>
+		</installStep>
+		<installStep name="Custom">
+			<visible>
+				<flagDependency flag="Custom" value="On"/> 
+			</visible>
+			<optionalFileGroups>
+				<group name="CustomOptions" type="SelectAtLeastOne">
+					<plugins order="Explicit">
+						<plugin name="Very Easy">
+							<description>Legendary Enemies appear in the Very Easy difficulty level 3 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryVeryEasy.esp" destination="LegendaryVeryEasy.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Easy">
+							<description>Legendary Enemies appear in the Easy difficulty level 3 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryEasy.esp" destination="LegendaryEasy.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Normal">
+							<description>Legendary Enemies appear in the Normal difficulty level 3 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryNormal.esp" destination="LegendaryNormal.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Hard">
+							<description>Legendary Enemies appear in the Hard difficulty level 3 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryHard.esp" destination="LegendaryHard.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Very Hard">
+							<description>Legendary Enemies appear in the Very Hard difficulty level 3 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendaryVeryHard.esp" destination="LegendaryVeryHard.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+						<plugin name="Survival">
+							<description>Legendary Enemies appear in the Survival difficulty level 3 times as often relative to unmodded normal difficulty.</description>
+							<files>
+								<file source="LegendarySurvival.esp" destination="LegendarySurvival.esp"/>
+							</files>
+							<typeDescriptor>
+								<type name="Optional"/>
+							</typeDescriptor>
+						</plugin>
+					</plugins>
+				</group>
+			</optionalFileGroups>
+		</installStep>
+	</installSteps>
+</config>
